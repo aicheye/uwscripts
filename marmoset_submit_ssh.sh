@@ -10,15 +10,9 @@ if [ $# -lt 3 ]; then
     exit 1
 fi
 
-# SSH server details - randomly select from available servers
-SERVERS=("002" "004" "008" "010" "012")
-RANDOM_INDEX=$((RANDOM % ${#SERVERS[@]}))
-SELECTED_SERVER=${SERVERS[$RANDOM_INDEX]}
-SERVER="ubuntu2404-${SELECTED_SERVER}.student.cs.uwaterloo.ca"
+# SSH server details
+SERVER="linux.student.cs.uwaterloo.ca"
 REMOTE_DIR="~/tmp"
-
-echo "Selected server: $SERVER"
-echo ""
 
 # Get course and project from arguments
 COURSE="$1"
